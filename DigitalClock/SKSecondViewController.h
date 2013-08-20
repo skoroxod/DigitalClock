@@ -10,4 +10,14 @@
 
 @interface SKSecondViewController : UIViewController
 
+{
+    IBOutlet UIPickerView* picker;
+    NSArray* pickerData;
+}
+
+
+
+@property (retain, nonatomic)     IBOutlet UIPickerView* picker;
+@property (retain, nonatomic)     NSArray* pickerData;
+
 @end

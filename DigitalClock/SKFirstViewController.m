@@ -7,22 +7,34 @@
 //
 
 #import "SKFirstViewController.h"
+#import "SKClockStyle.h"
+#import "SKClockStyleFirst.h"
+#import "SKClockStyleSecond.h"
+#import "SKAppDelegate.h"
 
 @interface SKFirstViewController ()
 {
     NSTimer *myTicker;
-
-    
 }
 @end
 
 @implementation SKFirstViewController
 
+@synthesize clockText;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self refreshTime];
     [self runTimer];
+}
+
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [self stopTimer];
 }
 
 - (void)didReceiveMemoryWarning
@@ -31,6 +43,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void) stopTimer {
+    [myTicker invalidate];
+}
 
 - (void)runTimer {
 
@@ -47,9 +62,18 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     NSDate *date = [NSDate date];
     
-    [formatter setTimeStyle:NSDateFormatterFullStyle];
+    SKAppDelegate *appDelegate = (SKAppDelegate *)[[UIApplication sharedApplication] delegate];
+    id <SKClockStyle> style;
     
-    [_clockText setText:[formatter stringFromDate:date]];
+    if ([appDelegate.clockTheme intValue] == 1) {
+        style = [[SKClockStyleFirst alloc] init];
+    } else {
+        style = [[SKClockStyleSecond alloc] init];
+    }
+    [formatter setTimeStyle: [style dateFormatterStyle]];
+    
+    
+    clockText.text = [formatter stringFromDate:date];
     
 }
 

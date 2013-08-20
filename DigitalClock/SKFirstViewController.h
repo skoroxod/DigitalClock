@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SKFirstViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UILabel *clockText;
 
 @end

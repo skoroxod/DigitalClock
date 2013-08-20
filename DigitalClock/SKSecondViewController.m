@@ -7,6 +7,7 @@
 //
 
 #import "SKSecondViewController.h"
+#import "SKAppDelegate.h"
 
 @interface SKSecondViewController ()
 
@@ -14,16 +15,48 @@
 
 @implementation SKSecondViewController
 
+
+@synthesize picker, pickerData;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+
+    NSArray* array =  [[NSArray alloc] initWithObjects:@"first",@"second", @"third", nil];
+    self.pickerData = array;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+
+- (NSInteger) numberOfComponentsInPickerView:(UIPickerView *) pickerView {
+    return 1;
+}
+
+-(NSInteger) pickerView:(UIPickerView *) pickerView numberOfRowsInComponent:(NSInteger)component {
+    return [pickerData count];
+}
+
+-(NSString *)pickerView:(UIPickerView *) pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [self.pickerData objectAtIndex:row];
+}
+
+-(void)pickerView:(UIPickerView*) pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+
+    SKAppDelegate *appDelegate = (SKAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    int select = row;
+    if (select == 0) {
+        appDelegate.clockTheme = [NSNumber numberWithInt:1];
+    } else {
+        appDelegate.clockTheme = [NSNumber numberWithInt:2];
+    }
 }
 
 @end

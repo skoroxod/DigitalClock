@@ -23,6 +23,8 @@
 		B605E63E17C14AC200C5E3DB /* SKSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B605E63D17C14AC200C5E3DB /* SKSecondViewController.m */; };
 		B605E64017C14AC200C5E3DB /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = B605E63F17C14AC200C5E3DB /* second.png */; };
 		B605E64217C14AC200C5E3DB /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B605E64117C14AC200C5E3DB /* second@2x.png */; };
+		B6AB5E0217C3AD5C00636FAE /* SKClockStyleFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AB5E0117C3AD5C00636FAE /* SKClockStyleFirst.m */; };
+		B6AB5E0517C3B02D00636FAE /* SKClockStyleSecond.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AB5E0417C3B02D00636FAE /* SKClockStyleSecond.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,11 @@
 		B605E63D17C14AC200C5E3DB /* SKSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKSecondViewController.m; sourceTree = "<group>"; };
 		B605E63F17C14AC200C5E3DB /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		B605E64117C14AC200C5E3DB /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		B6AB5DFF17C3AC7500636FAE /* SKClockStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKClockStyle.h; sourceTree = "<group>"; };
+		B6AB5E0017C3AD5C00636FAE /* SKClockStyleFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKClockStyleFirst.h; sourceTree = "<group>"; };
+		B6AB5E0117C3AD5C00636FAE /* SKClockStyleFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKClockStyleFirst.m; sourceTree = "<group>"; };
+		B6AB5E0317C3B02D00636FAE /* SKClockStyleSecond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKClockStyleSecond.h; sourceTree = "<group>"; };
+		B6AB5E0417C3B02D00636FAE /* SKClockStyleSecond.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKClockStyleSecond.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +113,11 @@
 				B605E63F17C14AC200C5E3DB /* second.png */,
 				B605E64117C14AC200C5E3DB /* second@2x.png */,
 				B605E62117C14AC200C5E3DB /* Supporting Files */,
+				B6AB5DFF17C3AC7500636FAE /* SKClockStyle.h */,
+				B6AB5E0017C3AD5C00636FAE /* SKClockStyleFirst.h */,
+				B6AB5E0117C3AD5C00636FAE /* SKClockStyleFirst.m */,
+				B6AB5E0317C3B02D00636FAE /* SKClockStyleSecond.h */,
+				B6AB5E0417C3B02D00636FAE /* SKClockStyleSecond.m */,
 			);
 			path = DigitalClock;
 			sourceTree = "<group>";
@@ -199,6 +211,8 @@
 				B605E62B17C14AC200C5E3DB /* SKAppDelegate.m in Sources */,
 				B605E63717C14AC200C5E3DB /* SKFirstViewController.m in Sources */,
 				B605E63E17C14AC200C5E3DB /* SKSecondViewController.m in Sources */,
+				B6AB5E0217C3AD5C00636FAE /* SKClockStyleFirst.m in Sources */,
+				B6AB5E0517C3B02D00636FAE /* SKClockStyleSecond.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +335,7 @@
 				B605E64717C14AC200C5E3DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
