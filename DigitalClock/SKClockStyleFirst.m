@@ -11,9 +11,29 @@
 @implementation SKClockStyleFirst
 
 
-- (NSDateFormatterStyle) dateFormatterStyle {
-    return NSDateFormatterShortStyle;
+- (NSDateFormatter*) dateFormatter {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setTimeStyle: NSDateFormatterLongStyle ];
+    return formatter;
 }
 
+- (NSTextAlignment) textAlignment {
+    return NSTextAlignmentCenter;
+}
+
+- (UIColor*) textColor {
+    return nil;
+}
+
+- (int) textSize {
+    return 18;
+}
+- (UIFont*) textFont {
+    return [UIFont fontWithName:@"Baskerville" size:[self textSize] ];
+}
+
+- (UIColor*) backgroundColor {
+    return nil;
+}
 
 @end

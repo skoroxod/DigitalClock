@@ -1,20 +1,21 @@
 //
-//  SKClockStyleSecond.m
+//  SKClockStyleThird.m
 //  DigitalClock
 //
-//  Created by Aleksandr Skorokhodov on 20.08.13.
+//  Created by Aleksandr Skorokhodov on 21.08.13.
 //  Copyright (c) 2013 Aleksandr Skorokhodov. All rights reserved.
 //
 
-#import "SKClockStyleSecond.h"
+#import "SKClockStyleThird.h"
 
-@implementation SKClockStyleSecond
+@implementation SKClockStyleThird
+
 
 - (NSDateFormatter*) dateFormatter {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setTimeStyle: NSDateFormatterMediumStyle ];
     
-    [formatter setDateFormat:@"hh:mm:ss"];    
+    [formatter setDateFormat:@"d.M.YYYY HH:mm:ss"];    
     return formatter;
 }
 
@@ -23,21 +24,22 @@
 }
 
 - (UIColor*) textColor {
-    return [UIColor blueColor];
+    return [UIColor purpleColor];
 }
 
 - (int) textSize {
-    return 56;
+    return 25;
 }
 
 
 - (UIFont*) textFont {
-    return [UIFont fontWithName:@"Chalkduster" size:[self textSize] ];
+    return [UIFont fontWithName:@"Party Let" size:[self textSize] ];
 }
 
 
 - (UIColor*) backgroundColor {
-    return [UIColor colorWithPatternImage:[UIImage imageNamed:@"orange"]];    
+    return [UIColor colorWithRed:0.25 green:0.75 blue:0.25 alpha:0.3];
 }
+
 
 @end

@@ -7,9 +7,7 @@
 //
 
 #import "SKFirstViewController.h"
-#import "SKClockStyle.h"
-#import "SKClockStyleFirst.h"
-#import "SKClockStyleSecond.h"
+#import "SKClockStyleFactory.h"
 #import "SKAppDelegate.h"
 
 @interface SKFirstViewController ()
@@ -20,7 +18,7 @@
 
 @implementation SKFirstViewController
 
-@synthesize clockText;
+@synthesize clockText, style;
 
 - (void)viewDidLoad
 {
@@ -28,6 +26,10 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    SKAppDelegate *appDelegate = (SKAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    style = [SKClockStyleFactory clockStyleWithId: [appDelegate.clockTheme intValue] ];
+    
     [self refreshTime];
     [self runTimer];
 }
@@ -59,21 +61,17 @@
 
 - (void)refreshTime {
     
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     NSDate *date = [NSDate date];
     
-    SKAppDelegate *appDelegate = (SKAppDelegate *)[[UIApplication sharedApplication] delegate];
-    id <SKClockStyle> style;
-    
-    if ([appDelegate.clockTheme intValue] == 1) {
-        style = [[SKClockStyleFirst alloc] init];
-    } else {
-        style = [[SKClockStyleSecond alloc] init];
-    }
-    [formatter setTimeStyle: [style dateFormatterStyle]];
-    
+    NSDateFormatter *formatter = [style dateFormatter];
     
     clockText.text = [formatter stringFromDate:date];
+    
+    clockText.textAlignment = [ style textAlignment];
+    clockText.textColor = [style textColor];
+    clockText.font = [style textFont];
+    
+    clockText.backgroundColor = [style backgroundColor];
     
 }
 

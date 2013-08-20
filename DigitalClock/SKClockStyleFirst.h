@@ -11,6 +11,5 @@
 
 @interface SKClockStyleFirst : NSObject <SKClockStyle>
 
-- (NSDateFormatterStyle) dateFormatterStyle;
 
 @end

@@ -10,6 +10,16 @@
 
 @protocol SKClockStyle <NSObject>
 
-- (NSDateFormatterStyle) dateFormatterStyle;
+- (NSDateFormatter*) dateFormatter;
+
+- (NSTextAlignment) textAlignment;
+
+- (UIColor*) textColor;
+
+- (UIFont*) textFont;
+
+- (int) textSize;
+
+- (UIColor*) backgroundColor;
 
 @end

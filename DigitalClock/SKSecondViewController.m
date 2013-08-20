@@ -23,7 +23,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 
-    NSArray* array =  [[NSArray alloc] initWithObjects:@"first",@"second", @"third", nil];
+    NSArray* array =  [[NSArray alloc] initWithObjects:@"default style",@"orange style", @"cool style", nil];
     self.pickerData = array;
 }
 
@@ -52,11 +52,7 @@
     SKAppDelegate *appDelegate = (SKAppDelegate *)[[UIApplication sharedApplication] delegate];
     
     int select = row;
-    if (select == 0) {
-        appDelegate.clockTheme = [NSNumber numberWithInt:1];
-    } else {
-        appDelegate.clockTheme = [NSNumber numberWithInt:2];
-    }
+    appDelegate.clockTheme = [NSNumber numberWithInt:row + 1 ];
 }
 
 @end

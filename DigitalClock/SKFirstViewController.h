@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SKClockStyle.h"
 
 @interface SKFirstViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *clockText;
+
+@property(strong, nonatomic) id <SKClockStyle> style;
 
 @end
